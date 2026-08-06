@@ -125,8 +125,8 @@ function createHeartShower() {
 function initAudio() {
     let isPlaying = false;
     let hasStartedOnce = false;
-    const START_TIME = 165; // Menit 2:45 = 165 detik
-    const audio = new Audio("music/Nadhif Basalamah - penjaga hati.mp3");
+    const START_TIME = 0; // Mulai dari awal
+    const audio = new Audio("music/Fancy Nancy _ Ooh La La.mp3");
 
     // Pastikan pemutaran pertama dimulai dari menit 2:45 saat metadata lagu dimuat
     audio.addEventListener("loadedmetadata", () => {
@@ -144,7 +144,7 @@ function initAudio() {
     // Buat tombol kontrol audio melayang
     const toggleBtn = document.createElement("button");
     toggleBtn.className = "audio-toggle-btn";
-    toggleBtn.innerHTML = "🔊 Putar Musik ❤️";
+    toggleBtn.innerHTML = "🔊 Putar Musik";
     document.body.appendChild(toggleBtn);
 
     // Fungsi memutar musik
@@ -155,12 +155,12 @@ function initAudio() {
         audio.play().then(() => {
             hasStartedOnce = true;
             isPlaying = true;
-            toggleBtn.innerHTML = "🔊 Musik Aktif ❤️";
+            toggleBtn.innerHTML = "🔊 Musik Aktif";
         }).catch(() => {
             // Jika file music/song.mp3 belum ada, gunakan melodi romantis cadangan
             playFallbackMelody();
             isPlaying = true;
-            toggleBtn.innerHTML = "🔊 Musik Aktif ❤️";
+            toggleBtn.innerHTML = "🔊 Musik Aktif";
         });
     };
 
@@ -169,7 +169,7 @@ function initAudio() {
             audio.pause();
         }
         isPlaying = false;
-        toggleBtn.innerHTML = "🔇 Putar Musik ❤️";
+        toggleBtn.innerHTML = "🔇 Putar Musik";
     };
 
     toggleBtn.addEventListener("click", () => {
