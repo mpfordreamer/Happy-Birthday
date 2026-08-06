@@ -108,6 +108,7 @@ body {
 .name-highlight {
     background: linear-gradient(135deg, #ff1a66, #9933ff);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
 }
